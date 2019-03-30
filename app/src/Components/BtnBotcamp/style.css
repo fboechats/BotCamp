@@ -6,4 +6,19 @@
     color: #fff;
     background-color: #ee3e25;
     text-transform: uppercase;
+    position: absolute;
+    top: 537px;
+    margin-left: calc(50% - 140px);
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    transition: transform .1s ease-in;
+    border-bottom: 1px solid #ee3c259a;
+}
+
+.btn-botcamp:active {
+    transform: scale(0.9);
+}
+
+.btn-botcamp:focus {
+    outline: none;
 }

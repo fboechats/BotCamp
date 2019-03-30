@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import BtnBotcamp from "./Components/BtnBotcamp";
+import LogoBotcamp from "./Components/LogoBotcamp";
+import "./Components/BgBotcamp/style.css";
 
 class App extends Component {
     render() {
-        return <BtnBotcamp />
+        return (
+        <>
+        <LogoBotcamp />
+        <BtnBotcamp />
+        </>
+        );
     };
 }
 
