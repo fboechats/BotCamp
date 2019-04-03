@@ -10,7 +10,7 @@ class App extends Component {
         return (
             <BgBotcamp>
                 <LogoBotcamp src={logo} />
-                <BtnBotcamp>Entrar</BtnBotcamp>
+                <BtnBotcamp>Login</BtnBotcamp>
             </BgBotcamp>
         );
     };
