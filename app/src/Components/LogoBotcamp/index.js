@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-const LogoBotcamp = styled.img.attrs({alt: "Logo do aplicativo BotCamp"})`
+import logo from "../../img/logo.png";
+
+const LogoBotcamp = styled.img.attrs({
+    src: logo,
+    alt: "Logo do aplicativo BotCamp"
+})`
     width: 248px;
     position: absolute;
     top: 120px;
