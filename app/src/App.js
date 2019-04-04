@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 
-import BgBotcamp from "./Components/BgBotcamp";
-import BtnBotcamp from "./Components/BtnBotcamp";
-import LogoBotcamp from "./Components/LogoBotcamp";
+import Login from "./pages/Login/index";
+import Chat from "./pages/Chat/index";
 
+import  "./styles/reset.css";
 
 class App extends Component {
     render() {
-        return (
-            <BgBotcamp>
-                <LogoBotcamp/>
-                <BtnBotcamp>Login</BtnBotcamp>
-            </BgBotcamp>
-        );
+        return <Login />;
     };
 }
 
