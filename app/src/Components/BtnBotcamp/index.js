@@ -5,13 +5,9 @@ const BtnBotcamp = styled.button`
         width: 280px;
         height: 50px;
         border-radius: 25px;
-        font-size: 20px;
         color: white;
         background-color: #ee3e25;
         text-transform: uppercase;
-        position: absolute;
-        top: 537px;
-        margin-left: calc(50% - 140px);
         font-size: 20px;
         font-family: 'Roboto', sans-serif;
         transition: transform .1s ease-in-out;
