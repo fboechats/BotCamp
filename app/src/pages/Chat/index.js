@@ -1,7 +1,14 @@
 import React from "react";
 
+import LogoBotcamp from "../../Components/LogoBotcamp";
+import ExitBotcamp from "../../Components/ExitBotcamp";
+import Header from "../../Components/HeaderBotcamp";
+
 const Chat = () => (
-    <h1>Doidera</h1>
+    <Header>
+        <LogoBotcamp />
+        <ExitBotcamp />
+    </Header>
 );
 
 export default Chat;
