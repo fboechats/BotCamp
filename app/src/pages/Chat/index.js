@@ -1,13 +1,13 @@
 import React from "react";
 
 import LogoBotcamp from "../../Components/LogoBotcamp";
-import ExitBotcamp from "../../Components/ExitBotcamp";
+import LogoutBotcamp from "../../Components/LogoutBotcamp";
 import Header from "../../Components/HeaderBotcamp";
 
 const Chat = () => (
     <Header>
-        <LogoBotcamp />
-        <ExitBotcamp />
+        <LogoBotcamp small />
+        <LogoutBotcamp />
     </Header>
 );
 

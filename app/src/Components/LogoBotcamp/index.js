@@ -6,7 +6,7 @@ const LogoBotcamp = styled.img.attrs({
     src: logo,
     alt: "Logo do aplicativo BotCamp"
 })`
-    width: 248px;
+    width: ${props => (props.small ? "200px" : "248px")};
 `;
 
 export default LogoBotcamp;
