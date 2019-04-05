@@ -4,11 +4,8 @@ const Header = styled.header`
 
     display: flex;
     justify-content: space-between;
-<<<<<<< HEAD
-=======
     width: 100vw;
     heigth: 66px;
->>>>>>> master
     background-color: #26265e;
     padding: 10px 16px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);

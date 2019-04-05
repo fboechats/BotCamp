@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-import exit from "../../img/exit.png";
+import logout from "../../img/logout.png";
 
-const ExitBotcamp = styled.img.attrs({
-    src: exit
+const LogoutBotcamp = styled.img.attrs({
+    src: logout
 })`
     margin-top: 4px;
     width: 30px;
     height: 30px;
 `;
 
-export default ExitBotcamp;
+export default LogoutBotcamp;
