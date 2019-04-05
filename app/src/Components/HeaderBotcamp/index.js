@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const Header = styled.header`
 
+    display: flex;
+    justify-content: space-between;
     width: 100vw;
     heigth: 66px;
     background-color: #26265e;
