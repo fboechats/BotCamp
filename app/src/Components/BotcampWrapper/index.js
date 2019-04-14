@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const Wrapper = styled.body`
-  
+const Wrapper = styled.body`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  background: #eaeafd;
-
+  background-color: #eaeafd;
 `;
+
+export default Wrapper;

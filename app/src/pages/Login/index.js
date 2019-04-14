@@ -1,15 +1,17 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import BgBotcamp from "../../Components/BgBotcamp";
 import LogoBotcamp from "../../Components/LogoBotcamp";
 import BtnBotcamp from "../../Components/BtnBotcamp";
 
 const Login = () => (
-    <BgBotcamp>
-        <LogoBotcamp/>
-        <Link to="/Chat"><BtnBotcamp content="Entrar" /></Link>
-    </BgBotcamp>
+  <BgBotcamp>
+    <LogoBotcamp />
+    <Link to="/Chat">
+      <BtnBotcamp content="Entrar" />
+    </Link>
+  </BgBotcamp>
 );
 
 export default Login;
