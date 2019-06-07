@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const Footer = styled.footer`
+const Footer = styled.form`
   width: 100vw;
-  heigth: 50px;
+  height: 50px;
 `;
 
 export default Footer;

@@ -4,6 +4,9 @@ const InputBotcamp = styled.input.attrs({
   type: "text",
   placeholder: "Diz aí..."
 })`
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100vw;
   height: 50px;
   box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.1);

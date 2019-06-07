@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import Wrapper from "../../Components/BotcampWrapper";
@@ -8,22 +8,45 @@ import ExitBotcamp from "../../Components/ExitBotcamp";
 import InputBotcamp from "../../Components/InputBotcamp";
 import Footer from "../../Components/FooterBotcamp";
 import UserMessageBotcamp from "../../Components/UserMessageBotcamp";
+import BotMessage from "../../Components/BotMessage";
 
-const Chat = () => (
-  <Wrapper>
-    <Header>
-      <LogoBotcamp />
-      <Link to="/">
-        <ExitBotcamp />
-      </Link>
-    </Header>
+export default class Chat extends Component {
+  state = {
+    inputMessage: "",
+    userMessages: []
+  };
 
-    <UserMessageBotcamp content="!cpf" />
+  handleInput = event => {
+    event.preventDefault();
 
-    <Footer>
-      <InputBotcamp />
-    </Footer>
-  </Wrapper>
-);
+    this.setState({
+      userMessages: [...this.state.userMessages, this.state.inputMessage],
+      inputMessage: ""
+    });
+  };
 
-export default Chat;
+  render() {
+    return (
+      <Wrapper>
+        <Header>
+          <LogoBotcamp />
+          <Link to="/">
+            <ExitBotcamp />
+          </Link>
+        </Header>
+
+        {this.state.userMessages.map(message => (
+          <UserMessageBotcamp className="first" content={message} />
+        ))}
+        <BotMessage />
+
+        <Footer onSubmit={this.handleInput}>
+          <InputBotcamp
+            value={this.state.inputMessage}
+            onChange={e => this.setState({ inputMessage: e.target.value })}
+          />
+        </Footer>
+      </Wrapper>
+    );
+  }
+}
