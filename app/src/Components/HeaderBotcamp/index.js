@@ -1,14 +1,15 @@
-import styled from "styled-components";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Header = styled.header`
+import { Wrapper, LogoBotcamp, ExitBotcamp } from './styles';
 
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-    heigth: 66px;
-    background-color: #26265e;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+const HeaderBotcamp = () => (
+  <Wrapper>
+    <LogoBotcamp />
+    <Link to="/">
+      <ExitBotcamp />
+    </Link>
+  </Wrapper>
+);
 
-`;
-
-export default Header;
+export default HeaderBotcamp;
