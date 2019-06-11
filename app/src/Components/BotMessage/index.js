@@ -1,16 +1,21 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'proptypes';
 
-import { Container, Avatar, Message } from "./styles";
+import { Container, Avatar, Message } from './styles';
 
-import BotImage from "../../img/botcamp.png";
+import BotImage from '../../img/botcamp.png';
 
-const BotMessage = () => (
-  <Container className="first">
+const BotMessage = ({ content }) => (
+  <Container>
     <Avatar>
       <img src={BotImage} alt="Avatar Bot" />
     </Avatar>
-    <Message content="327.836.231-87" />
+    <Message>{content}</Message>
   </Container>
 );
+
+BotMessage.propTypes = {
+  content: PropTypes.string.isRequired,
+};
 
 export default BotMessage;

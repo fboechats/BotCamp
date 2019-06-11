@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import background from "../../img/background.png";
+import background from '../../img/background.png';
 
 const BgBotcamp = styled.main`
   display: flex;

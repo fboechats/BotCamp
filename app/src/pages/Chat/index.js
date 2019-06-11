@@ -1,52 +1,87 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-import Wrapper from "../../Components/BotcampWrapper";
+import MessageWrapper from "../../Components/MessageWrapper";
 import Header from "../../Components/HeaderBotcamp";
-import LogoBotcamp from "../../Components/LogoBotcamp";
-import ExitBotcamp from "../../Components/ExitBotcamp";
-import InputBotcamp from "../../Components/InputBotcamp";
 import Footer from "../../Components/FooterBotcamp";
-import UserMessageBotcamp from "../../Components/UserMessageBotcamp";
-import BotMessage from "../../Components/BotMessage";
 
-export default class Chat extends Component {
-  state = {
-    inputMessage: "",
-    userMessages: []
+const Chat = () => {
+  const [inputMessage, setInput] = useState("");
+  const [userMessages, setMessage] = useState([]);
+  const [userFiles, setFile] = useState([]);
+  const [recording, setRecording] = useState(false);
+  const [records, setRecord] = useState([]);
+
+  const handleInput = event => {
+    event.preventDefault();
+    setMessage([...userMessages, inputMessage]);
+    setInput("");
   };
 
-  handleInput = event => {
-    event.preventDefault();
+  const imgUrl = (file, callback) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => callback(reader.result);
+  };
 
-    this.setState({
-      userMessages: [...this.state.userMessages, this.state.inputMessage],
-      inputMessage: ""
+  const handleChange = event => {
+    const file = event.target.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    imgUrl(file, imgUrl => {
+      setFile([...userFiles, imgUrl]);
+    });
+    event.target.value = null;
+  };
+
+  const handleStartRecord = () => {
+    if (recording === false) setRecording(true);
+
+    if (recording === true) setRecording(false);
+  };
+
+  const audioUrl = (file, callback) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => callback(reader.result);
+  };
+
+  const handleRecord = ({ blob }) => {
+    const file = blob;
+
+    if (!file) {
+      return;
+    }
+
+    audioUrl(file, audioUrl => {
+      setRecord([...records, audioUrl]);
     });
   };
 
-  render() {
-    return (
-      <Wrapper>
-        <Header>
-          <LogoBotcamp />
-          <Link to="/">
-            <ExitBotcamp />
-          </Link>
-        </Header>
+  return (
+    <>
+      <Header />
 
-        {this.state.userMessages.map(message => (
-          <UserMessageBotcamp className="first" content={message} />
-        ))}
-        <BotMessage />
+      <MessageWrapper
+        records={records}
+        userFiles={userFiles}
+        userMessages={userMessages}
+      />
 
-        <Footer onSubmit={this.handleInput}>
-          <InputBotcamp
-            value={this.state.inputMessage}
-            onChange={e => this.setState({ inputMessage: e.target.value })}
-          />
-        </Footer>
-      </Wrapper>
-    );
-  }
-}
+      <Footer
+        recording={recording}
+        handleStartRecord={handleStartRecord}
+        handleRecord={handleRecord}
+        handleChange={handleChange}
+        setFile={setFile}
+        handleInput={handleInput}
+        inputMessage={inputMessage}
+        setInput={setInput}
+      />
+    </>
+  );
+};
+
+export default Chat;
